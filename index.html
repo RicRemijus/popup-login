@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modal view login popup</title>
+    <link rel="stylesheet" href="style.css">       
+
+</head>
+<body>
+    <h3> Pop-up login form</h3>
+    <p>Click the login button to reveal log in form</p>
+    <button onclick="document.getElementById('pop').style.display='block'" style="width: auto;" >Login</button>
+    <div id="pop" class="modal">
+    <form action="" method="post" class="modal-content animate">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('pop').style.display='none'" class="close" title="close-login form">&times;</span>
+            <img src="m-app.png" alt="avatar" class="avatar">
+        </div>
+        <div class="container">
+            <label for="uname"><b>Username :</b></label>
+            <input type="text" placeholder="Enter your username" name="uname" autocomplete="0ff" required>
+            <label for="psw"><b>Password :</b></label>
+            <input type="password" placeholder="Enter your password" name="psw" autocomplete="off" required>
+            <button type="submit">Login</button>
+            <label>
+                <input type="checkbox" name="remember" id="">Remember Me
+            </label>
+        </div>
+            <div class="container" style="background-color: #e6dede; ">
+            <button class="cancelbtn" onclick="document.getElementById('pop').style.display='none'">Cancel</button>
+             <span class="psw">Forgot <a href="#">password ?</a></span>    
+        </div>
+    </form>
+    </div>
+    <script>
+        //get the modal
+        let modal = document.getElementById('pop');
+        //closes when a user click anywhere outside the modal
+        window.onclick = function(event){
+            if(event.target==modal){
+                modal.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+
